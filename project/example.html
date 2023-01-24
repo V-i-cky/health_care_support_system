@@ -1,0 +1,271 @@
+<html>
+<head>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Helpline</title>
+<style>
+
+.popup .overlay{
+	position:fixed;
+	
+	background:#555;
+	z-index:1;
+	display:none;
+} 
+.popup .content{
+	position:absolute;
+	background-color:#fff;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%) scale(0);
+	width:400px;
+	height:auto;
+	z-index:2;
+	text-align:center;
+	display:block;
+	box-sizing:border-box;
+	border-radius:20px;
+	justify-content:center;
+	margin-bottom:20px;
+	}
+.popup .close-btn{
+	position:absolute;
+	right:20px;
+	top:20px;
+	width:30px;
+	height:30px;
+	background:#222;
+	color:#fff;
+	font-size:25px;
+	font-weight:600;
+	line-height:30px;
+	text-align:center;
+	border-radius:50%;
+} 
+.popup.active .content{
+	display:block;
+} 
+.popup.active .content{
+  transition:all 300ms ease-in-out;
+	transform:translate(-50%,-50%) scale(1);
+} 
+
+form{
+display:flex;
+flex-direction:column;
+padding:2vw 4vw;
+width:70%;
+max-width:300px;
+}
+form h3{
+color:#555;
+font-weight:800px;
+margin-bottom:20px;
+}
+form input{ 
+padding:20px auto;
+background:#f5f5f5;
+border:0;
+outline:none;
+font-size:16px;
+border-radius:20px;
+width:200px;
+text-align:center;
+} 
+#name{
+margin-bottom:10px;
+padding:10px 5px;
+}
+#email{
+margin:10px 0;
+padding:10px 5px;
+}
+#phone{
+margin:10px 0;
+padding:10px 5px;
+}
+#textarea{ 
+margin:10px 5px;
+padding:10px 5px;
+width:150px;
+background:#f5f5f5;
+border:0;
+outline:none;
+font-size:16px;
+border-radius:20px;
+text-align:center;
+}
+form button{
+padding:15px;
+background:red;
+outline:none;
+border:0;
+color:white;
+cursor:pointer;
+font-size:16px;
+margin:20px auto;
+width:100px;
+height:2vh;
+border-radius:30px;
+height:auto;
+}
+</style>
+</head>
+<body>
+<div class="popup" id="popup1">
+<div class="overlay"></div> 
+<div class="content">
+<div class="close-btn"onclick="togglepopup()">&times;</div>
+
+<form class="gform pure-form pure-form-stacked" method="POST" data-email="vickynandy618@gmail.com"
+  action="https://script.google.com/macros/s/AKfycbyaBSRawohe_P9nftcP3pxWBTNPwK2I6LBe_148CYchMal6EOIN1AzdvHoJ-ozLiMD-/exec">
+    <div class="form-elements"><br>
+      <div style="background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.1));border:2px solid gray;border-radius: 20px;width: 350px;padding:10px;align-item:center;"><br>
+        <h3 class="content-head" style="font-size: 20px;">Contact Us!</h3>
+        
+        <!-- <b style="margin-left: -255px;font-size:20px;">Name</b><br>-->
+        <input type="text" id="name" name="name" required=""  placeholder="Name"/>
+
+       <!-- <b style="margin-left: -255px;font-size: 1.3em;">Email</b><br>-->
+        <input type="email" id="email" name="email" required=""  placeholder="Email"/>
+
+        <!-- <b style="margin-left: -255px;font-size: 1.3em;">Phone</b><br>-->
+         <input type="number" id="phone" name="phone" required=""  placeholder="Phone no"/>
+      
+        <!--<b style="margin-left: -110px;font-size: 1.3em;">How can we help you?</b><br>-->
+        <textarea  name="message" id="textarea" rows="10"  required=""  placeholder="How can we help you"></textarea>
+    
+        <button>
+        send</button>
+      </div>
+    </div>
+
+    <!-- Thankyou_message -->
+    <div class="thankyou_message" style="display:none;background:none;border:2px solid gray;border-radius: 20px;width: 200px;height:200px;padding-top: 15px;padding-bottom: 20px;padding-left: 20px;padding-right: 20px;"><br><br>
+      <h1>Thanks for contacting us!</h1>
+      <h1>*******</h1>
+    </div>
+  </form>
+</div>
+</div>
+<button onclick="togglepopup()">mobile game</button>
+<script src="https://smtpjs.com/v3/smtp.js">
+</script>
+<script data-cfasync="false" type="text/javascript">
+    
+   (function() {
+  function validEmail(email) {
+    var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+    return re.test(email);
+  }
+
+  function validateHuman(honeypot) {
+    if (honeypot) {
+      console.log("Robot Detected!");
+      return true;
+    } else {
+      console.log("Welcome Human!");
+    }
+  }
+  function getFormData(form) {
+    var elements = form.elements;
+
+    var fields = Object.keys(elements).filter(function(k) {
+          return (elements[k].name !== "honeypot");
+    }).map(function(k) {
+      if(elements[k].name !== undefined) {
+        return elements[k].name;
+      }else if(elements[k].length > 0){
+        return elements[k].item(0).name;
+      }
+    }).filter(function(item, pos, self) {
+      return self.indexOf(item) == pos && item;
+    });
+
+    var formData = {};
+    fields.forEach(function(name){
+      var element = elements[name];
+      formData[name] = element.value;
+      if (element.length) {
+        var data = [];
+        for (var i = 0; i < element.length; i++) {
+          var item = element.item(i);
+          if (item.checked || item.selected) {
+            data.push(item.value);
+          }
+        }
+        formData[name] = data.join(', ');
+      }
+    });
+
+    // add form-specific values into the data
+    formData.formDataNameOrder = JSON.stringify(fields);
+    formData.formGoogleSheetName = form.dataset.sheet || "sheet1"; // default sheet name
+    formData.formGoogleSendEmail = form.dataset.email || ""; // no email by default
+
+    console.log(formData);
+    return formData;
+  }
+
+  function handleFormSubmit(event) {  
+    event.preventDefault();           
+    var form = event.target;
+    var data = getFormData(form);         
+    if( data.email && !validEmail(data.email) ) {   
+      var invalidEmail = form.querySelector(".email-invalid");
+      if (invalidEmail) {
+        invalidEmail.style.display = "block";
+        return false;
+      }
+    } else {
+      disableAllButtons(form);
+      var url = form.action;
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', url);
+      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+      xhr.onreadystatechange = function() {
+          console.log(xhr.status, xhr.statusText);
+          console.log(xhr.responseText);
+          var formElements = form.querySelector(".form-elements")
+          if (formElements) {
+            formElements.style.display = "none"; // hide form
+          }
+          var thankYouMessage = form.querySelector(".thankyou_message");
+          if (thankYouMessage) {
+            thankYouMessage.style.display = "block";
+          }
+          return;
+      };
+      var encoded = Object.keys(data).map(function(k) {
+          return encodeURIComponent(k) + "=" + encodeURIComponent(data[k]);
+      }).join('&');
+      xhr.send(encoded);
+    }
+  }
+  
+  function loaded() {
+    console.log("Contact form submission handler loaded successfully.");
+    var forms = document.querySelectorAll("form.gform");
+    for (var i = 0; i < forms.length; i++) {
+      forms[i].addEventListener("submit", handleFormSubmit, false);
+    }
+  };
+  document.addEventListener("DOMContentLoaded", loaded, false);
+
+  function disableAllButtons(form) {
+    var buttons = form.querySelectorAll("button");
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].disabled = true;
+    }
+  }
+})();
+
+
+  </script>
+<script>
+function togglepopup(){
+document.getElementById("popup1").classList.toggle("active");
+}
+</script>
+</body>
+</html>

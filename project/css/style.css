@@ -1,0 +1,270 @@
+*{
+padding:0px;
+margin:0px;
+box-sizing:border-box; 
+} 
+.back-video{
+	position:absolute;
+	right:0;
+	bottom:0;
+	min-height:auto;
+	min-width:100%; 
+	width:100%;
+	height:auto;
+	z-index:-10;
+	overflow:hidden;
+	display:flex;
+	}
+
+nav{
+	width:100%; 
+	overflow:hidden;
+	height:15vh;
+	justify-content:space-between;
+	color:white;
+	display:flex;align-items:center; 
+	
+} 
+.column-30{
+	width:25%;
+	text-align:center; 
+	
+}
+.column-70{
+	width:45%;
+	justify-content:space-around;
+	display:flex;
+}
+.column-70 a {
+	color:white;width:20%;
+	text-decoration:none;
+	text-transform:uppercase;
+	}  
+	.column-70 a:first-child {
+		
+		color:#00b894;
+		}
+		.column-70 a:hover{
+			border-radius:8px;
+		padding:5px 10px;
+		text-decoration:none;
+		outline:none;
+		text-transform:uppercase;
+		background-color:#00b894;
+		color:white; 
+		margin:auto;
+		}
+		#butty:hover{
+			border-radius:8px;
+		padding:5px 10px;
+		text-decoration:none;
+		outline:none;
+		text-transform:uppercase;
+		background-color:#00b894;
+		color:white; 
+		margin:auto;
+		}
+main{
+	width:100%;
+	height:80vh;
+	justify-content:center;
+	text-align:center;align-items:center;
+	display:flex; 
+	color:white;
+}	
+section h3{
+	letter-spacing:3px;
+	font-weight:200;font-size:35px; 
+	text-shadow:2px 2px 4px black; 
+	color:white; 
+	text-decoration:none;
+} 
+section h1{
+	font-size:50px;
+	margin:25px 0px 20px 0;
+	font-weight:700;
+	text-shadow:2px 1px 5px black; 
+} 
+section p{
+	font-size:20px; 
+	text-shadow:1px 1px 2px black;  
+	margin-bottom:25px;
+	font-spacing:2px;
+}
+	section a{
+		border-radius:8px;
+		padding:12px 30px;
+		text-decoration:none;
+		outline:none;
+		text-transform:uppercase;
+		letter-spacing:1px;
+		font-size:13px;  
+		margin-left:25px;
+	}
+.btton-1{
+	background-color:#fff;
+	color:#000;
+} 
+.btton-1:hover{
+background-color:#00b894;
+	color:white;
+}
+ 	.btton-2{
+		background-color:#00b894;
+	color:white;
+}
+ .btton-2:hover{
+ background-color:#fff;
+	color:#000; 
+ } 
+ /*-------footer------*/
+ .container{
+max-width:1170px; 
+margin:auto;
+}
+ul{
+list-style:none;
+}
+.row{
+display:flex;
+flex-wrap:wrap;
+}
+footer{
+background-color:rgba(0,0,0,0.2); 
+height:50vh; 
+padding:70px 0;
+} 
+.column-1{
+padding:0 40px;
+letter-spacing:1px; 
+margin-left:20px; 
+}
+h3{
+font-weight:300;
+padding-bottom:20px; 
+font-size:20px; 
+font-style:bold; 
+text-decoration:underline;
+color:black;
+}
+.column-1 ul li{
+margin-bottom:15px;
+} 
+.column-2 a { 
+background-color:rgba(255,255,255,0.2);
+margin:auto;
+padding:10px 10px;
+text-align:center;
+border-radius:50%;
+color:black;
+}
+/*info page*/
+.topbar{
+	background-color:black;
+	width:100%
+	height:20px;
+	
+} 
+/*popup*/
+.popup .overlay{
+	position:fixed;
+	
+	background:#555;
+	z-index:1;
+	display:none;
+} 
+.popup .content{
+	position:absolute;
+	background-color:#fff;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%) scale(0);
+	width:400px;
+	height:auto;
+	z-index:2;
+	text-align:center;
+	display:block;
+	box-sizing:border-box;
+	border-radius:20px;
+	justify-content:center;
+	margin-bottom:20px;
+	}
+.popup .close-btn{
+	position:absolute;
+	right:20px;
+	top:20px;
+	width:30px;
+	height:30px;
+	background:#222;
+	color:#fff;
+	font-size:25px;
+	font-weight:600;
+	line-height:30px;
+	text-align:center;
+	border-radius:50%;
+} 
+.popup.active .content{
+	display:block;
+} 
+.popup.active .content{
+  transition:all 300ms ease-in-out;
+	transform:translate(-50%,-50%) scale(1);
+} 
+
+form{
+display:flex;
+flex-direction:column;
+padding:2vw 4vw;
+width:90%;
+max-width:600px;
+}
+form h3{
+color:#555;
+font-weight:800px;
+margin-bottom:20px;
+text-decoration:none;
+}
+form input,form textarea{ 
+padding:20px;
+background:#f5f5f5;
+border:0;
+outline:none;
+font-size:16px;
+} 
+#name{
+margin-bottom:10px;
+}
+#email{
+margin:10px 0;
+}
+#phone{
+margin:10px 0;
+}
+form button{
+padding:15px;
+background:red;
+outline:none;
+border:0;
+color:white;
+cursor:pointer;
+font-size:16px;
+margin:20px auto;
+width:150px;
+border-radius:30px;
+} 
+#butty{
+	border:0;
+	outline:none;
+	background:transparent;
+	color:white;
+	text-transform:uppercase;
+		letter-spacing:1px;
+		font-size:13px;  
+		margin:auto;
+		width:30%;
+		font-style:;
+}
+
+
+
+
