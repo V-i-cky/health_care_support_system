@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet"type="text/css" href="css/style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+/>
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+.header{
+color:#777;
+padding-top:40px;
+width:70%;
+}
+.header h2{
+margin-top:20px;
+padding-bottom:20px;
+}
+#cont{
+	width:80%;
+display:flex;
+align-items:center;
+justify-content:center;
+margin:0 auto;
+} 
+.swiper{
+	width:100%;
+	height:fit-content;
+	width:70%;
+	
+}
+.swiper-slide {
+width:70%;
+}
+
+.swiper-slide img{
+	width:100%;
+	margin-top:50px;
+	height:500px;
+	align-items:center;
+	border-radius:15px;
+
+	}
+.swiper.swiper-button-prev
+{
+	color:black;
+}
+</style>
+</head>
+<body>
+<div id="cont">
+<div class="header">
+<h2>Download the images here....</h2>
+<p>If you need the more quality in images and then you need anyother images related to the diseases you can search in the search bar which is available onthe top of the <mark>info page. </mark></p>
+</div>
+<!--swiper-->
+<div class="swiper">
+  <div class="swiper-wrapper">
+    <!-- Slides -->
+    <div class="swiper-slide"><img src="image/aids.jpg" ></div>
+    <div class="swiper-slide"><img src="image/heartu.jpg"></div>
+    <div class="swiper-slide"><img src="image/breast.jpg"></div>
+    <div class="swiper-slide"><img src="image/diabet.jpg"></div>
+    <div class="swiper-slide"><img src="image/corona.jpg"></div>
+    <div class="swiper-slide"><img src="image/kid.jpg"></div>
+    <div class="swiper-slide"><img src="image/kidney.jpg"></div>
+    <div class="swiper-slide"><img src="image/parkin.jpg"></div>
+    <div class="swiper-slide"><img src="image/dia.jpg"></div>
+    <div class="swiper-slide"><img src="image/heart.jpg"></div>
+    <div class="swiper-slide"><img src="image/brain.jpg"></div>
+    <div class="swiper-slide"><img src="image/brain1.jpg"></div>
+    
+  </div>
+  <!-- If we need pagination -->
+  <div class="swiper-pagination"></div>
+
+  <!-- If we need navigation buttons -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+</div>
+</div>
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+<script>
+const swiper = new Swiper('.swiper', {
+  loop: true,
+  autoplay:{
+  delay:2000,
+  disableonInteraction:false,
+  },
+
+pagination: {
+    el: '.swiper-pagination',
+	clickable:true,
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+});
+</script>
+</body>
+</html>

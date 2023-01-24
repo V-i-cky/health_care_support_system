@@ -1,0 +1,233 @@
+
+<!doctfile html>
+<html>
+<head>
+<title>HEALTH CARE ANALYSIS</title> 
+<link rel="stylesheet"type="text/css" href="css/style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" type="text/css" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"> 
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+/>
+
+</head> 
+<body> 
+<div class="container">
+<video autoplay loop muted plays-inline class="back-video">
+<source src="image/outer.mp4" type="video/mp4">
+</video>
+<!--header--> 
+<header> 
+<nav>
+<div class="column-30"> <h1>WELCOME</h1></div>
+<div class="column-70">
+<a href="swiper.html">home</a>
+<button id="butty" onclick="togglepopup()">Medical help</button>
+<a href="training.html">About</a>
+<a href="contact.html">contact</a>
+</div> 
+</nav> 
+<!--main section-->
+<main>
+<section>
+<h3>Health care analysis</h3>
+<h1>Here is a solution for all problems</h1> 
+<p>"we take care of your health"</p>
+<a href="trail.html"target="_blank" class="btton-1">for info</a>
+<a href="https://v-i-cky-mult-pred-decision-support-mdps-public-p9ify8.streamlit.app/"  target="_blank" class="btton-2">for detect</a>
+</section>
+</main>
+</header> 
+</div>
+<!--popup-->
+<div class="popup" id="popup1">
+<div class="overlay"></div> 
+<div class="content">
+<div class="close-btn"onclick="togglepopup()">&times;</div>
+
+<form class="gform pure-form pure-form-stacked" method="POST" data-email="vickynandy618@gmail.com"
+  action="https://script.google.com/macros/s/AKfycbyaBSRawohe_P9nftcP3pxWBTNPwK2I6LBe_148CYchMal6EOIN1AzdvHoJ-ozLiMD-/exec">
+    <div class="form-elements">
+<h3 class="content-head">Get in touch</h3>
+<input type="text" id="name" placeholder="your name" name="name" required="">
+<input type="email" id="email" placeholder="email id" name="email" required="">
+<input type="text" id="phone" placeholder="phone no" name="phone" required="" >
+<textarea id="message" rows="infinite" name="message" placeholder="How can we help you"></textarea>
+<button type="submit">Submit</button>
+</div>
+<!-- Thankyou_message -->
+    <div class="thankyou_message" style="display:none;background:;border:2px solid gray;border-radius: 20px;width: 300px;height:300px;padding:10px;"><br>
+      <h1>Thanks for contacting us!</h1>
+      <h5>Here the solution for all your problems!</h5>
+    </div>
+</form>
+</div>
+</div>
+<!--footer-->
+<footer>
+<div class="container">
+<div class="row">
+<div class="column-1">
+<ul> 
+<h3>INDUSTRIES</h3>
+<li>Health care</li>
+<li>sports</li>
+<li>construction</li>
+<li>hospitals</li>
+</ul>
+</div>
+<div class="column-1">
+<ul> 
+<h3>SOLUTION</h3>
+<li>detect heart disease</li>
+<li>detect kidney stones</li>
+<li>detect diabetes</li>
+<li>detect breast cancer</li>
+</ul>
+</div> 
+<div class="column-1">
+<ul> 
+<h3>ONLINE  SERVECES</h3>
+<li>medical equipments</li>
+<li>diagnostic lasers</li>
+<li>medicines</li>
+<li>online consultancy</li>
+</ul>
+</div> 
+<div class="column-2"> 
+<h3>CONTACT US</h3>
+<a href="#"><i class="fab fa-facebook-f"></i></a>
+<a href="#"><i class="fab fa-twitter"></i></a>
+<a href="#"> <i class="fab fa-instagram"></i></a> 
+<a href="#"><i class="fab fa-linkedin-in"></i></a>
+</div>
+</div>
+</div>
+<hr></hr> 
+<p style=" text-align:center;margin-right:80px;margin-top:15px";>@copyright-company name-<span>Health care analysis</span>
+</footer> 
+   <script src="https://smtpjs.com/v3/smtp.js"></script>
+<script data-cfasync="false" type="text/javascript">
+    
+   (function() {
+  function validEmail(email) {
+    var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+    return re.test(email);
+  }
+
+  function validateHuman(honeypot) {
+    if (honeypot) {
+      console.log("Robot Detected!");
+      return true;
+    } else {
+      console.log("Welcome Human!");
+    }
+  }
+  function getFormData(form) {
+    var elements = form.elements;
+
+    var fields = Object.keys(elements).filter(function(k) {
+          return (elements[k].name !== "honeypot");
+    }).map(function(k) {
+      if(elements[k].name !== undefined) {
+        return elements[k].name;
+      }else if(elements[k].length > 0){
+        return elements[k].item(0).name;
+      }
+    }).filter(function(item, pos, self) {
+      return self.indexOf(item) == pos && item;
+    });
+
+    var formData = {};
+    fields.forEach(function(name){
+      var element = elements[name];
+      formData[name] = element.value;
+      if (element.length) {
+        var data = [];
+        for (var i = 0; i < element.length; i++) {
+          var item = element.item(i);
+          if (item.checked || item.selected) {
+            data.push(item.value);
+          }
+        }
+        formData[name] = data.join(', ');
+      }
+    });
+
+    // add form-specific values into the data
+    formData.formDataNameOrder = JSON.stringify(fields);
+    formData.formGoogleSheetName = form.dataset.sheet || "sheet1"; // default sheet name
+    formData.formGoogleSendEmail = form.dataset.email || ""; // no email by default
+
+    console.log(formData);
+    return formData;
+  }
+
+  function handleFormSubmit(event) {  
+    event.preventDefault();           
+    var form = event.target;
+    var data = getFormData(form);         
+    if( data.email && !validEmail(data.email) ) {   
+      var invalidEmail = form.querySelector(".email-invalid");
+      if (invalidEmail) {
+        invalidEmail.style.display = "block";
+        return false;
+      }
+    } else {
+      disableAllButtons(form);
+      var url = form.action;
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', url);
+      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+      xhr.onreadystatechange = function() {
+          console.log(xhr.status, xhr.statusText);
+          console.log(xhr.responseText);
+          var formElements = form.querySelector(".form-elements")
+          if (formElements) {
+            formElements.style.display = "none"; // hide form
+          }
+          var thankYouMessage = form.querySelector(".thankyou_message");
+          if (thankYouMessage) {
+            thankYouMessage.style.display = "block";
+          }
+          return;
+      };
+      var encoded = Object.keys(data).map(function(k) {
+          return encodeURIComponent(k) + "=" + encodeURIComponent(data[k]);
+      }).join('&');
+      xhr.send(encoded);
+    }
+  }
+  
+  function loaded() {
+    console.log("Contact form submission handler loaded successfully.");
+    var forms = document.querySelectorAll("form.gform");
+    for (var i = 0; i < forms.length; i++) {
+      forms[i].addEventListener("submit", handleFormSubmit, false);
+    }
+  };
+  document.addEventListener("DOMContentLoaded", loaded, false);
+
+  function disableAllButtons(form) {
+    var buttons = form.querySelectorAll("button");
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].disabled = true;
+    }
+  }
+})();
+
+
+  </script>
+<script>
+function togglepopup(){
+document.getElementById("popup1").classList.toggle("active");
+}
+</script>
+</body>
+</html>
+
+
+
+
